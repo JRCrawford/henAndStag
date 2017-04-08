@@ -6,7 +6,9 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">HenStagLogo</a>
+        <a href="#">
+            <img src="{{ asset('images/sitewide/hen-and-stag-logo-transparent.png') }}" class="img-fluid col-lg-5 col-md-3 col-sm-4 col-6 " alt="Logo for the Hen and Bachelor Events">
+        </a>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto w-100 justify-content-end">
@@ -55,23 +57,46 @@
 
     <div class="container-fluid">
         <!-- Example row of columns -->
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-6 hotspot-wrapper">
                 <a href="/development/" class="thumbnail rounded home-thumb">
                     <img src="{{ asset('images/home/girls-drinking-cocktails.jpg') }}" alt="Hen party for girls drinking cocktails">
                 </a>
                 <h3>Hen Party</h3>
-                <p>If you are looking for a lavish hen do night or rather a great bargain deal party package then you'll find it here. Hen night planning and ideas for hen party venues</p>
+                <p class="text-left">If you are looking for a lavish hen do night or rather a great bargain deal party package then you'll find it here. Hen night planning and ideas for hen party venues</p>
             </div>
             <div class="col-md-6 rounded hotspot-wrapper">
                 <a href="/online-marketing/" class="thumbnail rounded home-thumb">
                     <img src="{{ asset('images/home/men-smoking-cigar-whiskey.jpg') }}" alt="Bachelor Party men smoking cigar and drinking whiskey">
                 </a>
                 <h3>Stag Party</h3>
-                <p>For adrenaline fueled day time activities to weekend party packages. We can help to organise an unforgettable bachelor party.</p>
+                <p class="text-left">For adrenaline fueled day time activities to weekend party packages. We can help to organise an unforgettable bachelor party.</p>
             </div>
         </div>
 
+        {#start of "why use us" section#}
+        <div class="container text-center">
+            <h2>Why should you use us?</h2>
+            <br>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <i class="fa fa-plus-square-o fa-5x" title="Create your own event package"></i>
+                    <h3>Create Your Own</h3>
+                    <p>Plan the perfect weekend with our Create Your Own service</p>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <i class="fa fa-calendar-check-o fa-5x" title="Save party date to calendar"></i>
+                    <h3>Save The Date</h3>
+                    <p>Secure your group booking today with just a R190.00 deposit</p>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <i class="fa fa-money fa-5x" title="Felxible Payment Plan"></i>
+                    <h2>Flexible Payment Plan</h2>
+                    <p>Spread your payment costs over a period that suits you</p>
+                </div>
+            </div>
+        </div>
+        {#end of "why use us" section#}
 
         <hr>
         <footer>
