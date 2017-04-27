@@ -19,4 +19,13 @@ class HSController extends Controller
 
     }
 
+    /**
+     * @Route("/hen-events/", name="hen_events")
+     */
+    public function showHenEvents()
+    {
+        $templating = $this->container->get('templating');
+        return $this->render('default/.html.twig');
+    }
+
 }
