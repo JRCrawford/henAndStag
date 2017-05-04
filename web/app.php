@@ -1,17 +1,34 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Debug\Debug;
+require_once __DIR__.'/access_control.php';
 
-/** @var \Composer\Autoload\ClassLoader $loader */
+umask(0002);
+
+/**
+ * @var Composer\Autoload\ClassLoader
+ */
 $loader = require __DIR__.'/../app/autoload.php';
 include_once __DIR__.'/../var/bootstrap.php.cache';
+require_once __DIR__.'/../app/AppKernel.php';
 
-$kernel = new AppKernel('prod', false);
-$kernel->loadClassCache();
-//$kernel = new AppCache($kernel);
+if (AccessControl::$debug) {
+    Debug::enable();
+}
 
-// When using the HttpCache, you need to call the method in your front controller instead of relying on the configuration parameter
-//Request::enableHttpMethodParameterOverride();
+$kernel = new AppKernel(AccessControl::$env, AccessControl::$debug);
+
+if (AccessControl::$env != 'dev') {
+    $kernel->loadClassCache();
+}
+
+//if (Settings::$env == 'prod') {
+//    require_once __DIR__.'/../app/AppCache.php';
+//    $kernel = new AppCache($kernel);
+//    Request::enableHttpMethodParameterOverride();
+//}
+
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
