@@ -15,7 +15,7 @@ class HSController extends Controller
     public function showHome()
     {
         $templating = $this->container->get('templating');
-        return $this->render('default/homepage.html.twig');
+        return $this->render('default/home.html.twig');
 
     }
 
