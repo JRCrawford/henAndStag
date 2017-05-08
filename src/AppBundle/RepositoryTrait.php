@@ -9,14 +9,14 @@ use Doctrine\ORM\EntityManager;
 /**
  * Class RepositoryTrait
  * @package AppBundle
- * @method EntityManager getEntityManager
+ * @method  protected EntityManager getEntityManager
  */
 trait RepositoryTrait
 {
     /**
      * @return Repository\ActivityRepository
      */
-    public function getActivityRepository()
+    protected function getActivityRepository()
     {
         return $this->getEntityManager()->getRepository(Activity::class);
     }
@@ -24,7 +24,7 @@ trait RepositoryTrait
     /**
      * @return Repository\CategoryRepository
      */
-    public function getCategoryRepository()
+    protected function getCategoryRepository()
     {
         return $this->getEntityManager()->getRepository(Category::class);
     }
@@ -32,7 +32,7 @@ trait RepositoryTrait
     /**
      * @return Repository\LocationRepository
      */
-    public function getLocationRepository()
+    protected function getLocationRepository()
     {
         return $this->getEntityManager()->getRepository(Location::class);
     }

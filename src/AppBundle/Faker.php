@@ -15,6 +15,8 @@ class Faker
     /** @var  EntityManager */
     private $entityManager;
 
+    public $catNames = ['Sporty', 'Action', 'Night Life', 'Unique', 'Chilled'];
+
     function __construct(EntityManager $entityManager, $kernelRoot)
     {
         $this->entityManager = $entityManager;
@@ -22,16 +24,18 @@ class Faker
     }
 
 
-    public function createCategory($numberOfEntities = 10)
+    public function createCategory()
     {
         if (!is_dir($this->path)) {
             mkdir($this->path);
         }
+
         $faker = Factory::create();
-        for ($i = 0; $i < $numberOfEntities; $i++) {
+        for ($i = 0; $i < count($this->catNames); $i++) {
             $entity = new Category();
-            $entity->setName($faker->word);
-            $entity->setIcon('/faker/' . $faker->image($this->path, 450, 450, 'sports', false));
+            $entity->setName($this->catNames[$i]);
+//            $entity->setIcon('/faker/' . $faker->image($this->path, 45, 45, 'sports', false));
+            $entity->setIcon('/faker/img/project_3.jpg');
             $this->entityManager->persist($entity);
         }
         $this->entityManager->flush();
@@ -59,13 +63,13 @@ class Faker
             $entity->setIsMaleActivity($faker->boolean);
             $entity->setMinPersonCapacity($faker->numberBetween());
             $entity->setMaxPersonCapacity($faker->numberBetween($entity->getMinPersonCapacity()));
-            $entity->setPricePerPerson($faker->randomFloat());
-            $entity->setSummary($faker->paragraph);
-            $entity->setSlug(util::slugify($entity->getSlug()));
-            $entity->setCategory($this->getCategoryRepository()->find($faker->numberBetween(0, 9)));
-            $entity->setLocation($this->getLocationRepository()->find($faker->numberBetween(0, 9)));
-            $entity->setThumbnailImage('/faker/' . $faker->image($this->path, 300, 300, 'people', false));
-            $entity->setMainImage('/faker/' . $faker->image($this->path, 1200, 700, 'nightlife', false));
+            $entity->setPricePerPerson($faker->randomFloat(2, 0, 10000));
+            $entity->setSummary($faker->paragraph(2));
+            $entity->setSlug(util::slugify($entity->getName()));
+            $entity->setCategory($this->getCategoryRepository()->find($faker->numberBetween(1, count($this->catNames))));
+            $entity->setLocation($this->getLocationRepository()->find($faker->numberBetween(1, 10)));
+            $entity->setThumbnailImage('/faker/' . $faker->image($this->path, 768, 624, 'people', false));
+            $entity->setMainImage('/faker/' . $faker->image($this->path, 1920, 600, 'nightlife', false));
             $this->entityManager->persist($entity);
         }
         $this->entityManager->flush();

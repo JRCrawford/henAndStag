@@ -1,0 +1,13 @@
+.work-item .work-description h3,
+.work-item.work-description span {
+    @include transform (translateX(0));
+}
+
+.work-item .work-overlay {
+    opacity: 1;
+    z-index: 1;
+}
+
+.work-item:hover .work-overlay {
+    background-color: rgba(20, 20, 20, 0);
+}

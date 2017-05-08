@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% include '_fragments/blog-single/_page_title.html.twig' with {'title': 'Stag activity'} %}
+    {% include '_fragments/index-youtube-bg/_our_services.html.twig' %}
+    {% include '_fragments/index-youtube-bg/_portfolio.html.twig' with {'categories': categories, 'activities' : activities} %}
+{% endblock %}

@@ -20,8 +20,11 @@ class FakerCommand extends ContainerAwareCommand
     {
         $output->writeln('Start!');
         $this->getAppFaker()->createLocation();
+        $output->writeln('Location done!');
         $this->getAppFaker()->createCategory();
-        $this->getAppFaker()->createActivity();
+        $output->writeln('Category done!');
+        $this->getAppFaker()->createActivity(15);
+        $output->writeln('Activity done!');
         $output->writeln('Exit!');
     }
 
