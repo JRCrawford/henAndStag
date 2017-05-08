@@ -1,0 +1,38 @@
+<!-- Portfolio -->
+<section class="section-wrap-mp pb-50">
+    <div class="container">
+        <!-- filter -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portfolio-filter">
+                    <a href="#" class="filter active" data-filter="*">All</a>
+                    {% for category in categories %}
+                        <a href="#" class="filter" data-filter=".{{ category.name }}">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div> <!-- end filter -->
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="grid-3-col grid-wide grid-gutter grayscale works-grid">
+
+            {% for activity in activities %}
+                <div class="work-item {{ activity.category ? activity.category.name : 'no-category' }}">
+                    <div class="work-img">
+                        <img src="{{ activity.thumbnailImage }}" alt="">
+                        <div class="work-overlay">
+                            <div class="work-description">
+                                <h3>
+                                    <a href="{{ path('app_activity', {'slug':activity.slug}) }}">{{ activity.name }}</a>
+                                </h3>
+                                <p>{{ activity.summary }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end work-item -->
+            {% endfor %}
+        </div>
+    </div>
+</section> <!-- end portfolio-->

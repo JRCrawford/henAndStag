@@ -112,7 +112,7 @@
                 </ul>
 
                 {#<div class="buttons-holder">#}
-                    {#<a href="#" class="btn btn-lg btn-white">Enquire Now</a>#}
+                {#<a href="#" class="btn btn-lg btn-white">Enquire Now</a>#}
                 {#</div>#}
                 <div class="local-scroll">
                     <a href="#reason-to-use-us" class="scroll-down">
@@ -222,20 +222,20 @@
                         <div class="col-md-6">
                             <div class="blog-col">
                                 <div class="entry-img">
-                                    <a href="blog-single.html">
+                                    <a href="{{ path('app_hen_activity_list') }}">
                                         <img src="{{ asset('images/home/men-smoking-cigar-whiskey_570_400.jpg') }}"
                                              alt="">
                                     </a>
                                 </div>
                                 <div class="entry-box">
                                     <div class="entry-title">
-                                        <h4><a href="blog-single.html">Hen Party</a></h4>
+                                        <h4><a href="{{ path('app_hen_activity_list') }}">Hen Party</a></h4>
                                     </div>
                                     <div class="entry-content">
                                         <p>If you are looking for a lavish hen do night or rather a great bargain deal
                                             party package then you'll find it here. Hen night planning and ideas for hen
                                             party venues</p>
-                                        <a href="blog-single.html" class="read-more">Read More</a>
+                                        <a href="{{ path('app_hen_activity_list') }}" class="read-more">Read More</a>
                                     </div>
                                 </div>
                             </div> <!-- end post -->
@@ -245,20 +245,20 @@
 
                             <div class="blog-col last">
                                 <div class="entry-img">
-                                    <a href="blog-single.html">
+                                    <a href="{{ path('app_stag_activity_list') }}">
                                         <img src="{{ asset('images/home/girls-drinking-cocktails_570_400.jpg') }}"
                                              alt="">
                                     </a>
                                 </div>
                                 <div class="entry-box">
                                     <div class="entry-title">
-                                        <h4><a href="blog-single.html">Stag Party</a></h4>
+                                        <h4><a href="{{ path('app_stag_activity_list') }}">Stag Party</a></h4>
                                     </div>
                                     <div class="entry-content">
                                         <p>For adrenaline fueled day time activities to weekend party packages. We can
                                             help to organise an unforgettable bachelor party.</p>
                                         <br>
-                                        <a href="blog-single.html" class="read-more">Read More</a>
+                                        <a href="{{ path('app_stag_activity_list') }}" class="read-more">Read More</a>
                                     </div>
                                 </div>
                             </div>

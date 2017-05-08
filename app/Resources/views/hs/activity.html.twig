@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% include '_fragments/blog-single/_page_title.html.twig' with {'title': activity.name, 'bgImage': activity.mainImage} %}
+    <!-- Blog Single -->
+    <section class="section-wrap pb-100 blog-single">
+        <div class="container relative">
+            <div class="row">
+
+                <!-- content -->
+                <div class="col-sm-12 blog-content">
+
+                    <!-- standard post -->
+                    <div class="entry-item">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1">
+
+                                <div class="entry-title">
+                                    <h2>{{ activity.name }}</h2>
+                                </div>
+                                <div class="entry">
+                                    <div class="entry-content">
+                                        <span class="dropcap style-1">{{ activity.description|slice(0, 1) }}</span>
+                                        {{ activity.description|slice(1) }}
+                                    </div>
+                                </div> <!-- end entry -->
+
+                            </div>
+                        </div> <!-- end row -->
+
+                    </div> <!-- end entry item -->
+                </div> <!-- end col -->
+
+            </div> <!-- end row -->
+
+        </div> <!-- end container -->
+    </section> <!-- end blog single -->
+{% endblock %}

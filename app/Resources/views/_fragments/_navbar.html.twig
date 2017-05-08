@@ -15,7 +15,7 @@
                     <!-- Logo -->
                     <div class="logo-container">
                         <div class="logo-wrap local-scroll">
-                            <a href="#home">
+                            <a href="/">
                                 <img class="logo"
                                      src="{{ asset('images/sitewide/hen-and-stag-logo-transparent.png') }}"
                                      alt="logo">
@@ -31,13 +31,13 @@
                         <ul class="nav navbar-nav local-scroll text-center">
 
                             <li class="active">
-                                <a href="#home">Home</a>
+                                <a href="/">Home</a>
                             </li>
                             <li>
-                                <a href="#services">Hen parties</a>
+                                <a href="{{ path('app_hen_activity_list') }}">Hen parties</a>
                             </li>
                             <li>
-                                <a href="#portfolio">Stag parties</a>
+                                <a href="{{ path('app_stag_activity_list') }}">Stag parties</a>
                             </li>
                             <li>
                                 <a href="#about-us">Event Locations</a>
