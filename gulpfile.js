@@ -1,13 +1,10 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('css', function () {
-    return gulp.src('web/css/sass/*.scss')
-        .pipe(sourcemaps.init())
+    gulp.src('app/Resources/assets/sass/**/*.scss')
         .pipe(sass())
-        .pipe(sourcemaps.write('/'))
-        .pipe(gulp.dest('web/css'))
+        .pipe(gulp.dest('web/generated-css'))
 });
 
 gulp.task('watcher', function () {

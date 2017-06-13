@@ -30,13 +30,13 @@
 
                         <ul class="nav navbar-nav local-scroll text-center">
 
-                            <li class="active">
+                            <li class="{{ app.request.attributes.get('_route') == 'app_home' ? 'active' }}">
                                 <a href="/">Home</a>
                             </li>
-                            <li>
+                            <li class="{{ app.request.attributes.get('_route') == 'app_hen_activity_list' ? 'active' }}">
                                 <a href="{{ path('app_hen_activity_list') }}">Hen parties</a>
                             </li>
-                            <li>
+                            <li class="{{ app.request.attributes.get('_route') == 'app_stag_activity_list' ? 'active' }}">
                                 <a href="{{ path('app_stag_activity_list') }}">Stag parties</a>
                             </li>
                             <li>
