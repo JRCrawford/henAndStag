@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    {% include '_fragments/blog-single/_page_title.html.twig' with {'title': 'Stag activity', 'headerImage': asset('images/stag/men-drinking-beer.jpeg') } %}
+    {% include '_fragments/blog-single/_page_title.html.twig' with {'title': 'Stag activity', 'bgImage': asset('images/stag/men-drinking-beer.jpeg') } %}
     {% include '_fragments/index-youtube-bg/_portfolio.html.twig' with {'categories': categories, 'activities' : activities} %}
 
 {% endblock %}

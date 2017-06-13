@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    {% include '_fragments/blog-single/_page_title.html.twig' with {'title': 'Hen activities', 'headerImage': asset('images/hen/women-drinking-cocktails.jpeg') } %}
-
+    {% include '_fragments/blog-single/_page_title.html.twig' with {'title': 'Hen activities', 'bgImage': asset('images/hen/women-drinking-cocktails.jpeg') } %}
     {% include '_fragments/index-youtube-bg/_portfolio.html.twig' with {'categories': categories, 'activities' : activities} %}
 {% endblock %}
