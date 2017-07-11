@@ -26,11 +26,12 @@
 .image-thumb img:hover {
     transform: scale(1.1);
 }
-.thumbnail {
-    overflow: hidden;
-}
-img {
+.image-thumb img {
     transition: all 0.3s ease 0s;
     width: 100%;
 }
+.thumbnail {
+    overflow: hidden;
+}
+
 
