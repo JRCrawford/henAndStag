@@ -34,4 +34,6 @@
     overflow: hidden;
 }
 
-
+.entry-box .entry-title a {
+    font-size: x-large;
+}
